@@ -10,11 +10,12 @@
   box-shadow: 20 20px 20px -20px #333;
 }
 #finder {
-  color: blue ;
+  color: blue;
 }
 #header {
   text-align: left;
   margin-left: 15px;
+  font-size: xx-large;
 }
 
 .loginform {
@@ -25,7 +26,6 @@
   margin: 8% auto 0;
   text-align: center;
   margin-left: 50%;
-
 }
 
 .loginform h1 {
@@ -33,7 +33,7 @@
   margin-bottom: 15px;
 }
 
-.inputbox{
+.inputbox {
   border-radius: 20px;
   padding: 12px;
   margin: 10px 0;
@@ -42,19 +42,18 @@
   outline: none;
 }
 
-.butooon{
-color: white;
-background-color: #1c8abd ;
-width: 90%;
-padding: 10px;
-border-radius: 20px;
-font-size: 15px;
-margin: 10px 0;
-border: none;
-outline: none;
-cursor: pointer;
+.butooon {
+  color: white;
+  background-color: #1c8abd;
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-
 
 #hrtwo {
   border: none;
@@ -154,6 +153,7 @@ cursor: pointer;
   border-radius: 5px;
   border-radius: 10px;
   background-color: white;
+  font-size: 15px;
 }
 
 #butn {
@@ -168,34 +168,36 @@ cursor: pointer;
   color: white;
   background-color: #1e90ff;
   transform: translateX(345px);
+  font-size: 19px;
+  padding: 2px;
+}
+#butn:hover {
+  background-color: rgb(58, 17, 207);
 }
 
-.sora{
-
+.sora {
   width: 300px;
   height: 300px;
 }
-#bigDiv{
-    display: inline-block;
-    vertical-align: top;
-    width: 56%;
-    height:50%;
-  
-  }
+#bigDiv {
+  display: inline-block;
+  vertical-align: top;
+  width: 56%;
+  height: 50%;
+}
 
-.txt{
+.txt {
   font-size: 20px;
   transform: translateX(0px);
   color: #fff;
   /* margin-bottom: px; */
-
 }
-#zerinmidel{
+#zerinmidel {
   text-align: center;
   margin-top: 50px;
 }
 
-.favpage{
+.favpage {
   background-color: #1e90ff; /* blue */
   border: none;
   color: white;
@@ -207,9 +209,8 @@ cursor: pointer;
   font-size: 16px;
   margin-left: 2px;
   margin-right: 2px;
-
 }
-.favpage_{
+.favpage_ {
   background-color: white; /* blue */
   border: none;
   color: #1e90ff;
@@ -223,7 +224,7 @@ cursor: pointer;
   margin-right: 2px;
 }
 
-.zer{
+.zer {
   background-color: #1e90ff; /* blue */
   border: none;
   color: white;
@@ -237,14 +238,14 @@ cursor: pointer;
   margin-right: 2px;
   margin-top: -17px;
 }
-.zer:hover{
-  background-color: rgb(44, 158, 179) ;
+.zer:hover {
+  background-color: rgb(44, 158, 179);
 }
-#wh{
+#wh {
   color: #fff;
 }
 
-.zeren{
+.zeren {
   background-color: #1e90ff; /* blue */
   border: none;
   color: white;
@@ -256,8 +257,8 @@ cursor: pointer;
   font-size: 16px;
   margin-left: 2px;
   margin-right: 2px;
-  margin-top: -17px;  
+  margin-top: -17px;
 }
-.zeren:hover{
-  background-color: rgb(44, 158, 179) ;
+.zeren:hover {
+  background-color: rgb(44, 158, 179);
 }

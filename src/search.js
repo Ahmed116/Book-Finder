@@ -1,14 +1,14 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import axios from "axios";
-import Showone from "./showone";
-import { text } from "body-parser";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import axios from 'axios';
+import Showone from './showone';
+import { text } from 'body-parser';
 class SearchBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: "",
-      input: " ",
+      search: '',
+      input: ' ',
       title: [],
     };
   }
@@ -19,7 +19,7 @@ class SearchBooks extends React.Component {
   }
 
   handleKeyPress(event) {
-    if (event.key === "Enter") this.handleSubmit();
+    if (event.key === 'Enter') this.handleSubmit();
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -33,50 +33,51 @@ class SearchBooks extends React.Component {
         // console.log(result.data.items)
         const resultArray = result.data.items;
         this.setState({ title: resultArray });
-        this.setState({ input:""})
+        this.setState({ input: '' });
       })
       .catch((err) => {
-        console.log("Error------->", err);
+        console.log('Error------->', err);
       });
   }
-  clearText(){this.setState({ input: "" })}
+  clearText() {
+    this.setState({ input: '' });
+  }
 
   render() {
     return (
-      <div id="search">
-        <h1 id="header">
-          <span id="wh"> Book </span> <span id="finder">Finder</span> {" "}
+      <div id='search'>
+        <h1 id='header'>
+          <span id='wh'> Book </span> <span id='finder'>Finder</span>{' '}
         </h1>
-        <div id="links">
-          <Link to="/auth/Fav" class="right">
-            <button class="zer"> Favorite </button>
+        <div id='links'>
+          <Link to='/auth/Fav' class='right'>
+            <button class='zer'> Favorite </button>
           </Link>
-          <Link to="/auth/read" class="right">
-            <button class="zer"> Read </button>
+          <Link to='/auth/read' class='right'>
+            <button class='zer'> Read later </button>
           </Link>
         </div>
 
-        <div class="buttonIn">
+        <div class='buttonIn'>
           <button
-            
-            id="butn"
+            id='butn'
             onClick={this.handleSubmit.bind(this)}
-            class="loginbutton"
+            class='loginbutton'
           >
             Search
           </button>
           <input
-            class="logemailandpassword"
-            id="inpt"
-            type="search"
-            name="input"
-            onfocus="myFunction()"
-            placeholder="Type, auther, book name, subject ..."
+            class='logemailandpassword'
+            id='inpt'
+            type='search'
+            name='input'
+            onfocus='myFunction()'
+            placeholder='Type, auther, book name, subject ...'
             value={this.state.input}
             onChange={this.handleChange.bind(this)}
           />
         </div>
-        <hr id="khat"/>
+        <hr id='khat' />
 
         <Showone titles={this.state.title} />
       </div>
