@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Showone from './showone';
-import { text } from 'body-parser';
+
+//search component
 class SearchBooks extends React.Component {
   constructor(props) {
     super(props);
@@ -25,12 +26,10 @@ class SearchBooks extends React.Component {
     e.preventDefault();
     const { input } = this.state;
 
-    // Make a ajax call to get the json data as response.
+    // use api google books
     axios
       .get(`https://www.googleapis.com/books/v1/volumes?q=` + this.state.input)
       .then((result) => {
-        // console.log(result.data.items[0].volumeInfo.title)
-        // console.log(result.data.items)
         const resultArray = result.data.items;
         this.setState({ title: resultArray });
         this.setState({ input: '' });
@@ -50,9 +49,12 @@ class SearchBooks extends React.Component {
           <span id='wh'> Book </span> <span id='finder'>Finder</span>{' '}
         </h1>
         <div id='links'>
+          {/* switch to favorite list */}
           <Link to='/auth/Fav' class='right'>
             <button class='zer'> Favorite </button>
           </Link>
+
+          {/* switch to read later list */}
           <Link to='/auth/read' class='right'>
             <button class='zer'> Read later </button>
           </Link>
@@ -71,7 +73,6 @@ class SearchBooks extends React.Component {
             id='inpt'
             type='search'
             name='input'
-            onfocus='myFunction()'
             placeholder='Type, auther, book name, subject ...'
             value={this.state.input}
             onChange={this.handleChange.bind(this)}
