@@ -1,11 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+
 mongoose
-  .connect("mongodb://localhost:27017/booksDB", { useNewUrlParser: true })
+  .connect('mongodb://localhost:27017/booksDB', { useNewUrlParser: true })
   .then(() => {
-    console.log(" The connecting is good :) ");
+    console.log(' The connecting is good :) ');
   })
-  .catch((err) => {
-    console.log(" Err when conecting To DataBase :( ", err);
+  .catch(err => {
+    console.log(' Err when conecting To DataBase :( ', err);
   });
 const RegSchema = mongoose.Schema({
   FirstName: { type: String },
@@ -14,6 +15,6 @@ const RegSchema = mongoose.Schema({
   Password: { type: String },
 });
 
-let RegModel = mongoose.model("users", RegSchema);
+let RegModel = mongoose.model('users', RegSchema);
 
 module.exports.RegModel = RegModel;

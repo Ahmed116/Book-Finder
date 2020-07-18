@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); //inclode mongoose in our page
 
+//connection to mongodb
 mongoose
   .connect("mongodb://localhost:27017/booksDB", { useNewUrlParser: true })
   .then(() => {
@@ -8,7 +9,7 @@ mongoose
   .catch((err) => {
     console.log(" Err when conecting To DataBase :( ", err);
   });
-
+//schema about book info
 let booksSchema = mongoose.Schema({
  title: { type: String },
  author:[{
@@ -20,4 +21,5 @@ let booksSchema = mongoose.Schema({
 
 
 let BooksModel = mongoose.model("books", booksSchema);
+
 module.exports.BooksModel = BooksModel;

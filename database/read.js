@@ -18,4 +18,5 @@ let readbooksSchema = mongoose.Schema({
 
 
 let ReadModel = mongoose.model("readbooks", readbooksSchema);
+
 module.exports.ReadModel = ReadModel;
