@@ -1,8 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Discription
+
+web application that will allow users to search for any books by entering a query (Title, Author, etc). And display the resulting books in a list on the page with all the corresponding data.using google book API and make list about favorite book and which book you want to read later and you can remove also book and you can read the book online .
+
+Also, the application has a user registration and login page to create user-specific accounts
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+
+
+### `nodemon indexServer.js`
+
+Run the server in finalEdit/server
 
 ### `npm start`
 
