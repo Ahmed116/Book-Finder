@@ -20,8 +20,9 @@ let BooksModel = db.BooksModel;
 let loginModel = log.loginModel;
 let RegModel = reg.RegModel;
 let ReadModel = read.ReadModel;
-app.post("/book", (req, res) => {
 
+//take the data of the book that i seach about it and put in favorit list
+app.post("/book", (req, res) => { 
   const { title, author, dateOfPublication , img} = req.body;
   
   let bookDocumentation = new BooksModel({
@@ -35,6 +36,8 @@ app.post("/book", (req, res) => {
     .then(() => res.status(201).send("saved"))
     .catch((err) => res.status(500).send(err + "err"));
 });
+
+//offer for me all the data in farovite -show the favorite  list
 app.get("/favorite", (req, res) => {
   BooksModel.find({})
     .then((result) => {
@@ -44,8 +47,10 @@ app.get("/favorite", (req, res) => {
     .catch((err) => {
       res.send(err);
     });
-});
-app.post("/readbook", (req, res) => {
+}); 
+
+//add to readlater lit
+app.post("/readbook", (req, res) => { 
 
   const { title, dateOfPublication , img } = req.body;
   
@@ -59,6 +64,8 @@ app.post("/readbook", (req, res) => {
     .then(() => res.status(201).send("saved"))
     .catch((err) => res.status(500).send(err + "err"));
 });
+
+//offer the read list 
 app.get("/readlater", (req, res) => {
   ReadModel.find({})
     .then((result) => {
@@ -70,6 +77,7 @@ app.get("/readlater", (req, res) => {
     });
 });
 
+// it inside favorite list through it i can delete whet i'm saved inside the list
 app.delete('/removeOne',function(req,res){
   BooksModel.find({})
   .deleteOne({}).then((result)=>{
@@ -89,6 +97,8 @@ app.delete('/removeread',function(req,res){
   })
 });
 
+
+//for all users infos
 app.post('/register', (req, res) => {
 
   const { FirstName, LastName, Email, Password } = req.body;
@@ -99,7 +109,7 @@ app.post('/register', (req, res) => {
       .catch((err) => res.status(500).send(err + "err"))
 });
 
-
+//take from regster and give me the ability to sign to main screen
 app.get('/login/:Email/:Password', (req, res) => {
 
   const { Email, Password } = req.params;

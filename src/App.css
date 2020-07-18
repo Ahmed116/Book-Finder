@@ -1,3 +1,4 @@
+/* themain search button */
 .logemailandpassword {
   margin-top: 10px;
   width: 35%;
@@ -9,15 +10,17 @@
   /* font-weight: bold; */
   box-shadow: 20 20px 20px -20px #333;
 }
+/*the second part of app name*/
 #finder {
   color: blue;
 }
+/*position & styling for the of app*/
 #header {
   text-align: left;
   margin-left: 15px;
   font-size: xx-large;
 }
-
+/*css for login card*/
 .loginform {
   width: 400px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
@@ -28,11 +31,13 @@
   margin-left: 50%;
 }
 
+/*the header inside login card*/
 .loginform h1 {
   color: #1c8abd;
   margin-bottom: 15px;
 }
 
+/*all input for loginand register*/
 .inputbox {
   border-radius: 20px;
   padding: 12px;
@@ -42,6 +47,7 @@
   outline: none;
 }
 
+/*for favorite and read list button */
 .butooon {
   color: white;
   background-color: #1c8abd;
@@ -55,6 +61,7 @@
   cursor: pointer;
 }
 
+
 #hrtwo {
   border: none;
   height: 200px;
@@ -66,23 +73,29 @@
   margin-top: 1%;
   size: 25x;
 }
+
+/*style about links*/
 #links {
   float: right;
   margin-top: -45px;
 }
 
+
 #search {
   text-align: center;
 }
 
+/*size of book img*/
 #img {
   border-radius: 50%;
 }
+/*the inout inside register card*/
 .reginform {
   text-align: center;
   margin-top: 7%;
   margin-left: 30%;
 }
+/*login button*/
 .loginbutton {
   width: 10%;
   height: 10%;
@@ -94,6 +107,7 @@
   color: white;
   margin-top: 10px;
 }
+
 #inpt {
   border-radius: 25px;
   border-color: cadetblue;
@@ -138,12 +152,13 @@
   }
 }
 
+/*for the input and button seacrh*/
 .buttonIn {
   width: 300px;
   position: relative;
   margin-left: 500px;
 }
-
+/*input search*/
 #inpt {
   margin: 0px;
   padding: 23px;
@@ -155,7 +170,7 @@
   background-color: white;
   font-size: 15px;
 }
-
+/*the button inside input search*/
 #butn {
   position: absolute;
   border-radius: 10px;
@@ -171,6 +186,7 @@
   font-size: 19px;
   padding: 2px;
 }
+
 #butn:hover {
   background-color: rgb(58, 17, 207);
 }
@@ -210,6 +226,7 @@
   margin-left: 2px;
   margin-right: 2px;
 }
+/* style about favaret page*/
 .favpage_ {
   background-color: white; /* blue */
   border: none;
@@ -224,6 +241,7 @@
   margin-right: 2px;
 }
 
+/* style button in rede later and favouret page */
 .zer {
   background-color: #1e90ff; /* blue */
   border: none;
@@ -238,13 +256,14 @@
   margin-right: 2px;
   margin-top: -17px;
 }
+/* hover*/
 .zer:hover {
   background-color: rgb(44, 158, 179);
 }
 #wh {
   color: #fff;
 }
-
+/* style about add to fav and read later button in show search book page*/
 .zeren {
   background-color: #1e90ff; /* blue */
   border: none;
