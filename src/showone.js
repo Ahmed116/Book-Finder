@@ -1,6 +1,6 @@
-import React from "react";
-import axios from "axios";
-import cors from "cors";
+import React from 'react';
+import axios from 'axios';
+import cors from 'cors';
 class Showone extends React.Component {
   constructor(props) {
     super(props);
@@ -9,37 +9,38 @@ class Showone extends React.Component {
   render() {
     const { titles } = this.props;
     return (
-      <div id="s">
+      <div id='s'>
         <div>
-          {titles.map((element, index) => {
+          {titles && titles.map((element, index) => {
             return (
-              <div key={index} id="bigDiv">
+              <div key={index} id={`bigDiv-${index}`} class="big-div-item">
                 <br></br>
-                <div class="txt">
+                <div class='txt'>
                   Title: {element.volumeInfo.title}
                   <br />
-                  Authors:{" "} {element.volumeInfo.authors}
+                  Authors: {element.volumeInfo.authors}
                   <br />
                   Published Date:{element.volumeInfo.publishedDate}
                   <br />
                 </div>
                 <br />
                 <div>
-                  {" "}
+                  {' '}
                   <a
                     href={element.accessInfo.webReaderLink}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    rel='noopener noreferrer'
+                    target='_blank'
                   >
-                  <img
-                    src={element.volumeInfo.imageLinks.smallThumbnail}
-                    alt="new"
-                    class="sora"
-                  /></a>
+                    <img
+                      src={element.volumeInfo.imageLinks.smallThumbnail}
+                      alt='new'
+                      class='sora'
+                    />
+                  </a>
                   <br />
                   <br />
                   <button
-                    class="zeren"
+                    class='zeren'
                     onClick={() => {
                       console.log(element.volumeInfo);
                       var a = element.volumeInfo.title;
@@ -54,7 +55,7 @@ class Showone extends React.Component {
                       };
                       console.log(data);
                       axios
-                        .post("http://localhost:5000/book", data)
+                        .post('http://localhost:5000/book', data)
                         .then((res) => {
                           console.log(res.data);
                         })
@@ -63,15 +64,16 @@ class Showone extends React.Component {
                         });
                     }}
                   >
-                    {" "} LIKE {" "}
+                    {' '}
+                    Add to favorite{' '}
                   </button>
-                  <br></br>{" "}
+                  <br></br>{' '}
                 </div>
-                <br/>
+                <br />
                 <div>
-                  {" "}
+                  {' '}
                   <button
-                  class="zeren"
+                    class='zeren'
                     onClick={() => {
                       console.log(element.volumeInfo);
                       var a = element.volumeInfo.title;
@@ -84,7 +86,7 @@ class Showone extends React.Component {
                       };
                       console.log(data);
                       axios
-                        .post("http://localhost:5000/readbook", data)
+                        .post('http://localhost:5000/readbook', data)
                         .then((res) => {
                           console.log(res.data);
                         })
@@ -93,23 +95,18 @@ class Showone extends React.Component {
                         });
                     }}
                   >
-                    {" "}
-                    READ Later{" "}
+                    {' '}
+                    READ Later{' '}
                   </button>
-                    {/* READ IT ON LINE{" "} */}
-                    <br/>
+                  {/* READ IT ON LINE{" "} */}
+                  <br />
                   <hr />
                 </div>
-                
-                
               </div>
             );
           })}
-          
         </div>
-        
       </div>
-      
     );
   }
 }
