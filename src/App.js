@@ -1,53 +1,46 @@
-import React from "react";
-import SearchBooks from "./search.js";
-import "./App.css";
-import Registration from "./registration.js";
-import Login from "./login.js";
+import React from 'react';
+import './App.css';
+import Registration from './registration.js';
+import Login from './login.js';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
- import App2 from './App2'
+} from 'react-router-dom';
+import App2 from './App2';
+
+//main component
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
-    };
+    this.state = {};
   }
+  //Authuntocation
   setUserAuth = (value) => this.setState({ isAuthenticated: true });
+  //switch between login page & register page & App2 page
   render() {
     return (
-      <div className="app">
-       
+      <div className='app'>
         <Router>
           <Switch>
-            <Route path="/auth/login">
+            <Route path='/auth/login'>
               <Login setUserAuth={this.setUserAuth} />
             </Route>
-            <Route exact path="/auth/reg">
+            <Route exact path='/auth/reg'>
               <Registration setUserAuth={this.setUserAuth} />
             </Route>
-            {/* <Route exact path="/searchBook">
-              <SearchBooks />
-            </Route> */}
-            <PrivateRoute isAuthenticated={this.state.isAuthenticated} path="/">
+
+            <PrivateRoute isAuthenticated={this.state.isAuthenticated} path='/'>
               <App2 />
             </PrivateRoute>
-            {/* <PrivateRoute
-              isAuthenticated={this.state.isAuthenticated}
-              path="/searchBook"
-            >
-              <SearchBooks />
-            </PrivateRoute> */}
           </Switch>
         </Router>
       </div>
     );
   }
 }
+//prevent user to enter main page without login or register
 function PrivateRoute({ children, isAuthenticated, ...rest }) {
   return (
     <Route
@@ -58,7 +51,7 @@ function PrivateRoute({ children, isAuthenticated, ...rest }) {
         ) : (
           <Redirect
             to={{
-              pathname: "/auth/login",
+              pathname: '/auth/login',
               state: { from: location },
             }}
           />

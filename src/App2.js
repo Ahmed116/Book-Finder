@@ -1,18 +1,16 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import SearchBooks from './search.js';
-import  Falist from './favare'
-// import Registration from "./registration.js";
-// import Login from "./login.js";
+import Falist from './favare';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
+} from 'react-router-dom';
+import Readlater from './readlater.js';
 
-import Readlater from './readlater.js'
+//switch between search page & favorite page and read later page
 class App2 extends React.Component {
   constructor(props) {
     super(props);
@@ -23,18 +21,16 @@ class App2 extends React.Component {
   setUserAuth = (value) => this.setState({ isAuthenticated: value });
   render() {
     return (
-     
-      <div className="app">
-       
+      <div className='app'>
         <Router>
           <Switch>
-            <Route path="/auth/Search">
-              <SearchBooks setUserAuth={this.setUserAuth}  id = 's'/>
+            <Route path='/auth/Search'>
+              <SearchBooks setUserAuth={this.setUserAuth} id='s' />
             </Route>
-            <Route exact path="/auth/Fav">
+            <Route exact path='/auth/Fav'>
               <Falist setUserAuth={this.setUserAuth} />
             </Route>
-            <Route exact path="/auth/read">
+            <Route exact path='/auth/read'>
               <Readlater setUserAuth={this.setUserAuth} />
             </Route>
           </Switch>
@@ -43,24 +39,5 @@ class App2 extends React.Component {
     );
   }
 }
-// function PrivateRoute({ children, isAuthenticated, ...rest }) {
-//   return (
-//     <Route
-//       {...rest}
-//       render={({ location }) =>
-//         isAuthenticated ? ( 
-//           children
-//         ) : (
-//           <Redirect
-//             to={{
-//               pathname: "/auth/Search",
-//               state: { from: location },
-//             }}
-//           />
-//         )
-//       }
-//     />
-//   );
-// }
 
 export default App2;
